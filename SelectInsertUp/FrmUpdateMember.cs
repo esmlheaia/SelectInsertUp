@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SelectInsertUp
 {
-    public partial class FrmClubRegistration : Form
+    public partial class FrmUpdateMember : Form
     {
-        public FrmClubRegistration()
+        public FrmUpdateMember()
         {
             InitializeComponent();
         }
