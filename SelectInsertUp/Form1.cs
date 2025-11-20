@@ -20,6 +20,7 @@ namespace SelectInsertUp
         private long StudentID;
 
         
+
         public FrmClubRegistration()
         {
             InitializeComponent();
@@ -66,5 +67,15 @@ namespace SelectInsertUp
         {
             RefreshListOfClubMembers(); // Refresh the list of club members when the refresh button is clicked
         }
+        private void datalist_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            FrmUpdateMember frmUpdateMember = new FrmUpdateMember(); // Create a new instance of FrmUpdateMember
+            frmUpdateMember.Show();
+        }
     }
-}
+    }
+

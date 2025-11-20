@@ -32,7 +32,7 @@ namespace SelectInsertUp
         public ClubRegistrationQuery() // Constructor
         {
             // Initialize the connection string and database objects
-            conectionString = "Data Source=DESKTOP-R0UDTTE\\SQLEXPRESS;Initial Catalog=ClubDB_Joson;Integrated Security=True;Trust Server Certificate=True";
+            conectionString = "Data Source=DESKTOP-R0UDTTE\\SQLEXPRESS;Initial Catalog=ClubDB_Joson;Integrated Security=True;TrustServerCertificate=True";
             sqlConnect = new SqlConnection(conectionString);
             dataTable = new DataTable();
             bindingSource = new BindingSource();
@@ -44,7 +44,7 @@ namespace SelectInsertUp
             string ViewClubMembers = "SELECT StudentID, FirstName, MiddleName, LastName, Age, Gender, Program FROM ClubMembers";
 
             // Create a data adapter to execute the query and fill the data table
-            SqlDataAdapter sqlAdapter = new SqlDataAdapter(ViewClubMembers, sqlConnect);
+            sqlAdapter = new SqlDataAdapter(ViewClubMembers, sqlConnect);
 
             // Clear existing data and fill the data table with new data
             dataTable.Clear();
@@ -74,6 +74,59 @@ namespace SelectInsertUp
             sqlConnect.Close();
             return true;
         }
+        public void IdSelect(ComboBox cb)
+        {
+            string selectId = "SELECT StudentId FROM ClubMembers ";
+            sqlCommand = new SqlCommand(selectId, sqlConnect);
+            sqlCommand.CommandText = selectId;
+            sqlConnect.Open();
+            sqlReader = sqlCommand.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                cb.Items.Add(sqlReader["StudentId"].ToString());
+            }
+            sqlConnect.Close();
+
+        }
+
+        // Method to auto-search and populate fields based on Student ID
+        public void AutoSearch(TextBox tbFirstName, TextBox tbMiddleName, TextBox tbLastName, TextBox tbAge, ComboBox cbGender, ComboBox cbProgram, int ID)
+        {
+            string selectId = "SELECT FirstName,MiddleName,LastName,Age,Gender,Program FROM ClubMembers WHERE StudentId = @ID ";
+            sqlCommand = new SqlCommand(selectId, sqlConnect);
+            sqlCommand.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+            sqlCommand.CommandText = selectId;
+            sqlConnect.Open();
+            sqlReader = sqlCommand.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                tbFirstName.Text = (sqlReader["FirstName"].ToString());
+                tbMiddleName.Text = (sqlReader["MiddleName"].ToString());
+                tbLastName.Text = (sqlReader["LastName"].ToString());
+                tbAge.Text = (sqlReader["Age"].ToString());
+                cbGender.Text = (sqlReader["Gender"].ToString());
+                cbProgram.Text = (sqlReader["Program"].ToString());
+            }
+            sqlConnect.Close();
+        }
+        // Method to update student information
+        public void UpdateStudent(long StudentID, string FirstName, string
+                                 MiddleName, string LastName, int Age, string Gender, string Program)
+        {
+            sqlCommand = new SqlCommand("UPDATE ClubMembers SET FirstName = @FirstName,MiddleName = @MiddleName,LastName= @LastName,Age= @Age,Gender= @Gender,Program= @Program WHERE StudentId = @StudentID", sqlConnect);
+
+            sqlCommand.Parameters.Add("@StudentID", SqlDbType.VarChar).Value = StudentID;
+            sqlCommand.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstName;
+            sqlCommand.Parameters.Add("@MiddleName", SqlDbType.VarChar).Value = MiddleName;
+            sqlCommand.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastName;
+            sqlCommand.Parameters.Add("@Age", SqlDbType.Int).Value = Age;
+            sqlCommand.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
+            sqlCommand.Parameters.Add("@Program", SqlDbType.VarChar).Value = Program;
+            sqlConnect.Open();
+            sqlCommand.ExecuteNonQuery();
+            sqlConnect.Close();
+        }
+
 
     }
 }

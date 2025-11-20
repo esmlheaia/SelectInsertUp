@@ -181,6 +181,15 @@
             // cmbprogram
             // 
             this.cmbprogram.FormattingEnabled = true;
+            this.cmbprogram.Items.AddRange(new object[] {
+            "BS in Information Technology (BSIT)",
+            "BS in Computer Science (BSCS)",
+            "BS in Information Systems (BSIS)",
+            "BS in Business Administration (BSBA)",
+            "formerly BS in Business Management (BSBM)",
+            "BS in Accountancy (BSA)",
+            "BS in Accounting Information System (BSAIS)",
+            "BS in Management Accounting (BSMA)"});
             this.cmbprogram.Location = new System.Drawing.Point(461, 93);
             this.cmbprogram.Name = "cmbprogram";
             this.cmbprogram.Size = new System.Drawing.Size(289, 21);
@@ -189,6 +198,9 @@
             // cmbgender
             // 
             this.cmbgender.FormattingEnabled = true;
+            this.cmbgender.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
             this.cmbgender.Location = new System.Drawing.Point(371, 255);
             this.cmbgender.Name = "cmbgender";
             this.cmbgender.Size = new System.Drawing.Size(121, 21);
@@ -202,6 +214,7 @@
             this.datalist.Name = "datalist";
             this.datalist.Size = new System.Drawing.Size(763, 173);
             this.datalist.TabIndex = 15;
+            this.datalist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalist_CellContentClick);
             // 
             // btnregister
             // 
@@ -225,6 +238,7 @@
             this.btnupdate.TabIndex = 17;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btnrefresh
             // 

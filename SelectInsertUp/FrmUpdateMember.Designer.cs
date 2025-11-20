@@ -35,14 +35,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.cmbProgram = new System.Windows.Forms.ComboBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtMiddlename = new System.Windows.Forms.TextBox();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmbStudentID = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -122,56 +122,62 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Program:";
             // 
-            // textBox1
+            // txtLastName
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtLastName.Location = new System.Drawing.Point(26, 118);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(247, 20);
+            this.txtLastName.TabIndex = 7;
             // 
-            // comboBox1
+            // cmbProgram
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(26, 358);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(246, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cmbProgram.FormattingEnabled = true;
+            this.cmbProgram.Items.AddRange(new object[] {
+            "Bachelor of Science in Computer Science (BSCS)",
+            "Bachelor of Science in Information Technology (BSIT)",
+            "Bachelor of Science in Computer Engineering",
+            "Bachelor of Science in Accounting Information System",
+            "Bachelor of Science in Accountancy",
+            "Bachelor of Science in Business Administration",
+            "Bachelor of Science in Retail Technology and Consumer Science",
+            "Bachelor of Science in Hospitality Management",
+            "Bachelor of Science in Tourism Management"});
+            this.cmbProgram.Location = new System.Drawing.Point(26, 358);
+            this.cmbProgram.Name = "cmbProgram";
+            this.cmbProgram.Size = new System.Drawing.Size(246, 21);
+            this.cmbProgram.TabIndex = 8;
             // 
-            // textBox2
+            // txtFirstName
             // 
-            this.textBox2.Location = new System.Drawing.Point(26, 167);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtFirstName.Location = new System.Drawing.Point(26, 167);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(247, 20);
+            this.txtFirstName.TabIndex = 9;
             // 
-            // textBox3
+            // txtMiddlename
             // 
-            this.textBox3.Location = new System.Drawing.Point(27, 219);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtMiddlename.Location = new System.Drawing.Point(27, 219);
+            this.txtMiddlename.Name = "txtMiddlename";
+            this.txtMiddlename.Size = new System.Drawing.Size(247, 20);
+            this.txtMiddlename.TabIndex = 10;
             // 
-            // textBox4
+            // txtAge
             // 
-            this.textBox4.Location = new System.Drawing.Point(27, 264);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(99, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtAge.Location = new System.Drawing.Point(27, 264);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(99, 20);
+            this.txtAge.TabIndex = 11;
             // 
-            // comboBox2
+            // cmbGender
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(26, 311);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 12;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(25, 74);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(247, 20);
-            this.textBox5.TabIndex = 13;
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Female ",
+            "Male"});
+            this.cmbGender.Location = new System.Drawing.Point(26, 311);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(100, 21);
+            this.cmbGender.TabIndex = 12;
             // 
             // button1
             // 
@@ -183,6 +189,15 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Confirm";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmbStudentID
+            // 
+            this.cmbStudentID.FormattingEnabled = true;
+            this.cmbStudentID.Location = new System.Drawing.Point(27, 74);
+            this.cmbStudentID.Name = "cmbStudentID";
+            this.cmbStudentID.Size = new System.Drawing.Size(198, 21);
+            this.cmbStudentID.TabIndex = 15;
             // 
             // FrmUpdateMember
             // 
@@ -191,14 +206,14 @@
             this.BackgroundImage = global::SelectInsertUp.Properties.Resources.Blue_Modern_Notes_Linktree_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(300, 477);
+            this.Controls.Add(this.cmbStudentID);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbGender);
+            this.Controls.Add(this.txtAge);
+            this.Controls.Add(this.txtMiddlename);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.cmbProgram);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -208,6 +223,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmUpdateMember";
             this.Text = "FrmUpdateMember";
+            this.Load += new System.EventHandler(this.FrmUpdateMember_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,13 +238,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.ComboBox cmbProgram;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtMiddlename;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbStudentID;
     }
 }
