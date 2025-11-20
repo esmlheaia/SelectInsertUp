@@ -213,6 +213,7 @@
             this.btnregister.TabIndex = 16;
             this.btnregister.Text = "Register";
             this.btnregister.UseVisualStyleBackColor = false;
+            this.btnregister.Click += new System.EventHandler(this.btnregister_Click);
             // 
             // btnupdate
             // 
@@ -235,6 +236,7 @@
             this.btnrefresh.TabIndex = 18;
             this.btnrefresh.Text = "Refresh";
             this.btnrefresh.UseVisualStyleBackColor = false;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
             // 
             // FrmClubRegistration
             // 
@@ -264,6 +266,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmClubRegistration";
             this.Text = "FrmClubRegistration";
+            this.Load += new System.EventHandler(this.FrmClubRegistration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datalist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
