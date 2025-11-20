@@ -90,7 +90,7 @@ namespace SelectInsertUp
         }
 
         // Method to auto-search and populate fields based on Student ID
-        public void AutoSearch(TextBox tbFirstName, TextBox tbMiddleName, TextBox tbLastName, TextBox tbAge, ComboBox cbGender, ComboBox cbProgram, int ID)
+        public void AutoSearch(TextBox txtfirstname, TextBox txtmiddlename, TextBox txtlastname, TextBox txtage, ComboBox cmbgender, ComboBox cmbprogram, int ID)
         {
             string selectId = "SELECT FirstName,MiddleName,LastName,Age,Gender,Program FROM ClubMembers WHERE StudentId = @ID ";
             sqlCommand = new SqlCommand(selectId, sqlConnect);
@@ -100,12 +100,12 @@ namespace SelectInsertUp
             sqlReader = sqlCommand.ExecuteReader();
             while (sqlReader.Read())
             {
-                tbFirstName.Text = (sqlReader["FirstName"].ToString());
-                tbMiddleName.Text = (sqlReader["MiddleName"].ToString());
-                tbLastName.Text = (sqlReader["LastName"].ToString());
-                tbAge.Text = (sqlReader["Age"].ToString());
-                cbGender.Text = (sqlReader["Gender"].ToString());
-                cbProgram.Text = (sqlReader["Program"].ToString());
+                txtfirstname.Text = (sqlReader["FirstName"].ToString());
+                txtmiddlename.Text = (sqlReader["MiddleName"].ToString());
+                txtlastname.Text = (sqlReader["LastName"].ToString());
+                txtage.Text = (sqlReader["Age"].ToString());
+                cmbgender.Text = (sqlReader["Gender"].ToString());
+                cmbprogram.Text = (sqlReader["Program"].ToString());
             }
             sqlConnect.Close();
         }

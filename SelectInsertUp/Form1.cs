@@ -24,6 +24,7 @@ namespace SelectInsertUp
         public FrmClubRegistration()
         {
             InitializeComponent();
+            clubRegistrationQuery = new ClubRegistrationQuery();
         }
 
         private void FrmClubRegistration_Load(object sender, EventArgs e)

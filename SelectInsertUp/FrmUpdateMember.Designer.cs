@@ -133,15 +133,14 @@
             // 
             this.cmbProgram.FormattingEnabled = true;
             this.cmbProgram.Items.AddRange(new object[] {
-            "Bachelor of Science in Computer Science (BSCS)",
-            "Bachelor of Science in Information Technology (BSIT)",
-            "Bachelor of Science in Computer Engineering",
-            "Bachelor of Science in Accounting Information System",
-            "Bachelor of Science in Accountancy",
-            "Bachelor of Science in Business Administration",
-            "Bachelor of Science in Retail Technology and Consumer Science",
-            "Bachelor of Science in Hospitality Management",
-            "Bachelor of Science in Tourism Management"});
+            "BS in Information Technology (BSIT)",
+            "BS in Computer Science (BSCS)",
+            "BS in Information Systems (BSIS)",
+            "BS in Business Administration (BSBA)",
+            "formerly BS in Business Management (BSBM)",
+            "BS in Accountancy (BSA)",
+            "BS in Accounting Information System (BSAIS)",
+            "BS in Management Accounting (BSMA)"});
             this.cmbProgram.Location = new System.Drawing.Point(26, 358);
             this.cmbProgram.Name = "cmbProgram";
             this.cmbProgram.Size = new System.Drawing.Size(246, 21);
